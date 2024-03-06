@@ -9,7 +9,7 @@ export const apiSlice = createApi({
   endpoints: (builder) => ({
     getAllProjects: builder.query({
       query: () => "/api/",
-      
+
       providesTags: (result, error, arg) =>
         result
           ? [...result.map(({ id }) => ({ type: "Project", id })), "Project"]
