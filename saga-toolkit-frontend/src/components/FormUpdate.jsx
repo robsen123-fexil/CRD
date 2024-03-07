@@ -7,11 +7,16 @@ import { useEditProjectMutation } from "../rtk-query/features/project/api/apiSli
 const FormUpdate = ({ singleProject }) => {
   const navigate = useNavigate();
 
-  const pageStyles = {
-    backgroundColor: "black",
-    color: "white",
-    border: "none",
-  };
+ const footerStyles = {
+   backgroundColor: "darkgray", // Change this color as needed
+   color: "black",
+   padding: "10px",
+   textAlign: "center",
+ };
+ const iconStyles = {
+   marginRight: "10px",
+   color: "black",
+ };
 
   const {
     id,
@@ -56,10 +61,10 @@ const FormUpdate = ({ singleProject }) => {
 
   return (
     <div>
-      <Form onSubmit={projectUpdateSubmitHandler} style={pageStyles}>
+      <Form onSubmit={projectUpdateSubmitHandler} >
         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
           <Form.Control
-            style={pageStyles}
+          
             type="text"
             placeholder="Enter Title"
             value={title}
@@ -68,7 +73,7 @@ const FormUpdate = ({ singleProject }) => {
           />
         </Form.Group>
 
-        <Form.Group className="mb-3" controlId="exampleForm.ControlInput1" style={pageStyles}>
+        <Form.Group className="mb-3" controlId="exampleForm.ControlInput1" >
           <Form.Control
             type="text"
             placeholder="Enter Artist Name"
@@ -89,7 +94,7 @@ const FormUpdate = ({ singleProject }) => {
         </Form.Group>
 
         <Form.Select
-          style={pageStyles}
+          
           boundr
           aria-label="Default select example"
           value={category}
@@ -155,7 +160,7 @@ const FormUpdate = ({ singleProject }) => {
         </Form.Group>
 
         <Button variant="success" type="submit">
-          Update Project
+          Update Song
         </Button>
       </Form>
     </div>

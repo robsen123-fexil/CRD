@@ -15,10 +15,10 @@ const {id} = useParams();
 const { data:singleProject } = useGetSingleProjectQuery(id);
 
   return (
-    <div className="container mt-4 mb-4 pd-3" style={pageStyles} backgroundColor="black">
-      <h1 style={pageStyles}>Update Project id:{id}</h1>
+    <div className="container mt-4 mb-4 pd-3" >
+      <h1 >Update Song</h1>
       <hr />
-      <div style={pageStyles}>
+      <div >
         <FormUpdate singleProject={singleProject} />
       </div>
     </div>

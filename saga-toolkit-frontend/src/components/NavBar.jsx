@@ -1,6 +1,7 @@
 import React from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
+import { FaUser } from "react-icons/fa"; // Import the user icon from react-icons
 import Searchbox from "./Searchbox";
 
 const NavBar = () => {
@@ -29,8 +30,15 @@ const NavBar = () => {
                 </NavLink>
               </Nav.Link>
             </Nav>
+            <Searchbox />
           </Navbar.Collapse>
-          <Searchbox />
+
+          <NavLink>     </NavLink>
+          <NavLink style={navBarStyles} to="/Account">
+          
+            <FaUser style={{ marginRight: "10px", marginLeft:"100" }} /> 
+          </NavLink>
+          
         </Container>
       </Navbar>{" "}
     </div>

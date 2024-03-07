@@ -5,6 +5,7 @@ import AddProject from './components/AddProject';
 import UpdateProject from './components/UpdateProject';
 import ProjectDetail from './components/ProjectDetail';
 import NavBar from './components/NavBar';
+import Account from './components/Account'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route  path='/add-project' element={<AddProject />} />
           <Route  path='/project-detail/:projectId' element={<ProjectDetail />} />
           <Route  path='/update-project/:id' element={<UpdateProject />} />
+          <Route path='/Account' element={<Account/>} />
         </Routes>
       </BrowserRouter>
     </div>

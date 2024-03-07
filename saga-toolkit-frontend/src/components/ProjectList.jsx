@@ -7,6 +7,7 @@ import { useGetAllProjectsQuery } from '../rtk-query/features/project/api/apiSli
 import { filtered } from '../rtk-query/features/project/filter/filterSlice'
 import NavBar from './NavBar'
 import "@fortawesome/fontawesome-free/css/all.css";
+import { FaInfoCircle } from "react-icons/fa";
 const ProjectList = () => {
 
 
@@ -33,7 +34,7 @@ const dispatch = useDispatch();
 
   return (
     <div style={pageStyles}>
-      <h1>Song's</h1>
+      <h1>Latest</h1>
       <hr />
       <Container style={pageStyles}>
         <Row style={pageStyles}>
@@ -203,28 +204,24 @@ const dispatch = useDispatch();
                         <Card.Text
                           onClick={() => dispatch(filtered(project.category))}
                         >
-                          <b>({project.category})</b>
+                         <p></p>
                         </Card.Text>
                         <hr />
-                        <a
-                          className="btn btn-info m-2 pd-2"
-                          style={pageStyles}
-                          href={project.demo}
-                          target="_blank"
-                        >
-                          Link
-                        </a>
+                    
                         <Link
                           style={{
                             textDecoration: "none",
                             marginLeft: "2px",
                             marginRight: "2px",
                             pageStyles,
+                            color:"white",
+                            backgroundColor:"black",
+                            borderBlock:"none"
                           }}
                           className="m-2 pd-2 btn btn-success"
                           to={"/project-detail/" + project.id}
                         >
-                          Detail
+                          <FaInfoCircle /> View
                         </Link>
                       </Card.Body>
                     </Card>
@@ -234,7 +231,7 @@ const dispatch = useDispatch();
         </Row>
       </Container>
       <div style={footerStyles}>
-        <p>&copy; 2024 Addis Software . Setting The Standard.</p>
+        <p>&copy; 2024 Addis Software(Setting The Standard).</p>
         <p> All rights reserved.</p>
         <a
           href="mailto:info@addissoftware.com"
