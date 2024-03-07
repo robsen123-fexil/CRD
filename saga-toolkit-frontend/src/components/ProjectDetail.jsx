@@ -22,6 +22,7 @@ const ProjectDetail = () => {
     const pageStyles = {
       backgroundColor: "black",
       color: "white",
+      boundry : "none"
     };
     const linkStyles = {
       
@@ -53,14 +54,38 @@ const ProjectDetail = () => {
       <Container style={pageStyles} backgroundColor="black">
         <h1 className="text-center mt-3 mb-3 pd-2">Song Description</h1>
         <Row className="justify-content-center" style={pageStyles}>
-          <Col xs={12} md={6} lg={4}>
+          <Col xs={12} lg={6}>
+            {singleProject ? (
+              <Card style={{ width: "42rem", backgroundColor: "gray-white" }}>
+                <Card.Img variant="top" src={singleProject.image} />
+                <audio controls>
+                  <source
+                    src={singleProject.audio}
+                    type="audio/mp3"
+                    style={pageStyles}
+                  />
+                </audio>
+
+                <Card.Body style={pageStyles}>
+                  <br />
+                  <hr />
+                  <Link
+                    to={"/update-project/" + singleProject.id}
+                    style={linkStyles}
+                  ></Link>
+                </Card.Body>
+              </Card>
+            ) : (
+              "no data"
+            )}
+          </Col>
+          <Col xs={20} lg={6}>
             {singleProject ? (
               <Card style={{ width: "22rem" }}>
-                <Card.Img variant="top" src={singleProject.image} />
                 <audio controls>
                   <source src={singleProject.audio} type="audio/mp3" />
                 </audio>
-                <Card.Body>
+                <Card.Body style={{ fontSize: "18px", padding: "20px" }}>
                   <Card.Title>Title: {singleProject.title}</Card.Title>
                   <Card.Title>Artist name : {singleProject.artist}</Card.Title>
                   <Card.Title>Album Title :{singleProject.album}</Card.Title>
@@ -96,10 +121,12 @@ const ProjectDetail = () => {
                       Edit
                     </Button>
                   </Link>
+
                   <Button
                     variant="danger"
                     className="mt-2 mb-2 pd-2"
                     style={buttonStyles}
+                    onClick={() => deleteSingleProject(singleProject.id)}
                   >
                     <FontAwesomeIcon icon={faTrash} className="mr-2" />
                     delete
