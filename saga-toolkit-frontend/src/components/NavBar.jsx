@@ -1,47 +1,68 @@
 import React from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
-import { FaUser } from "react-icons/fa"; // Import the user icon from react-icons
+import { FaUser } from "react-icons/fa";
 import Searchbox from "./Searchbox";
+import styled from "styled-components";
+
+const NavBarContainer = styled.div`
+  background-color: black;
+  color: white;
+  border: none;
+`;
+
+const StyledNavbar = styled(Navbar)`
+  background-color: black;
+  color: white;
+  border: none;
+`;
+
+const StyledBrand = styled(Navbar.Brand)`
+  color: white;
+`;
+
+const StyledToggle = styled(Navbar.Toggle)`
+  color: white;
+`;
+
+const StyledCollapse = styled(Navbar.Collapse)`
+  color: white;
+`;
+
+const StyledNav = styled(Nav)`
+  color: white;
+`;
+
+
+
+const StyledFaUser = styled(FaUser)`
+  margin-right: 10px;
+  color:white;
+`;
 
 const NavBar = () => {
-  const navBarStyles = {
-    backgroundColor: "black",
-    color: "white",
-    border: "none",
-  };
-
   return (
-    <div style={navBarStyles}>
-      <Navbar expand="lg" style={navBarStyles}>
-        <Container style={navBarStyles}>
-          <Navbar.Brand style={navBarStyles} href="/">
-            Home
-          </Navbar.Brand>
-          <Navbar.Toggle
-            aria-controls="basic-navbar-nav"
-            style={navBarStyles}
-          />
-          <Navbar.Collapse id="basic-navbar-nav" style={navBarStyles}>
-            <Nav className="me-auto" style={navBarStyles}>
-              <Nav.Link style={navBarStyles}>
-                <NavLink style={navBarStyles} to="/add-project">
-                  Create Song
-                </NavLink>
-              </Nav.Link>
-            </Nav>
+    <NavBarContainer>
+      <StyledNavbar expand="lg">
+        <Container>
+          <StyledBrand href="/">Home</StyledBrand>
+          <StyledToggle aria-controls="basic-navbar-nav" />
+          <StyledCollapse id="basic-navbar-nav">
+            <StyledNav className="me-auto">
+              <StyledBrand href="/add-project">Create</StyledBrand>
+            </StyledNav>
             <Searchbox />
-          </Navbar.Collapse>
+            <StyledBrand href>                                              
+            
+            </StyledBrand>
+          </StyledCollapse>
 
-          <NavLink>     </NavLink>
-          <NavLink style={navBarStyles} to="/Account">
-          
-            <FaUser style={{ marginRight: "10px", marginLeft:"100" }} /> 
+          <NavLink to="/Account">
+            <StyledFaUser />
           </NavLink>
-          
         </Container>
-      </Navbar>{" "}
-    </div>
+      </StyledNavbar>
+    </NavBarContainer>
   );
 };
 

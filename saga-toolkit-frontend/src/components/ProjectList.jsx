@@ -1,53 +1,94 @@
-import React from 'react'
-import { Col, Card, Container, Row } from 'react-bootstrap'
-import { useSelector } from 'react-redux'
-import { useDispatch } from 'react-redux'
-import { Link } from 'react-router-dom'
-import { useGetAllProjectsQuery } from '../rtk-query/features/project/api/apiSlice'
-import { filtered } from '../rtk-query/features/project/filter/filterSlice'
-import NavBar from './NavBar'
-import "@fortawesome/fontawesome-free/css/all.css";
+import React from "react";
+import { Col, Card, Container, Row } from "react-bootstrap";
+import { useSelector, useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
+import { useGetAllProjectsQuery } from "../rtk-query/features/project/api/apiSlice";
+import { filtered } from "../rtk-query/features/project/filter/filterSlice";
+import NavBar from "./NavBar";
 import { FaInfoCircle } from "react-icons/fa";
+import styled from "@emotion/styled";
+import { space, layout, color, borders } from "styled-system";
+import "@fortawesome/fontawesome-free/css/all.css";
+
+const pageStyles = {
+  backgroundColor: "black",
+  color: "white",
+  border: "none",
+};
+
+const footerStyles = {
+  backgroundColor: "darkgray",
+  color: "black",
+  padding: "10px",
+  textAlign: "center",
+};
+
+const iconStyles = {
+  marginRight: "10px",
+  color: "black",
+};
+
+const StyledCard = styled(Card)`
+  width: 18rem;
+  background: black;
+  color: white;
+`;
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  margin-left: 2px;
+  margin-right: 2px;
+  ${pageStyles}
+  color: white;
+  background-color: black;
+  border-block: none;
+`;
+
+const StyledViewButton = styled(StyledLink)`
+  ${borders}
+`;
+
+const StyledContainer = styled(Container)`
+  ${pageStyles}
+`;
+
+const StyledRow = styled(Row)`
+  ${pageStyles}
+`;
+
+const StyledFooter = styled.div`
+  background-color: darkgray;
+  color: black;
+  padding: 10px;
+  text-align: center;
+`;
+
+const StyledFooterContainer = styled.div`
+  ${footerStyles}
+`;
+
+const StyledIconLink = styled.a`
+  ${iconStyles}
+`;
+
 const ProjectList = () => {
-
-
-const {data: projectList} = useGetAllProjectsQuery();
-const { search, filterByType } = useSelector(state => state.filter);
-
-
-const dispatch = useDispatch();
- const pageStyles = {
-   backgroundColor: "black",
-   color: "white",
-   border: "none" 
- };
- const footerStyles = {
-   backgroundColor: "darkgray", // Change this color as needed
-   color: "black",
-   padding: "10px",
-   textAlign: "center",
- };
-   const iconStyles = {
-     marginRight: "10px",
-     color:"black"
-   };
+  const { data: projectList } = useGetAllProjectsQuery();
+  const { search, filterByType } = useSelector((state) => state.filter);
+  const dispatch = useDispatch();
 
   return (
     <div style={pageStyles}>
       <h1>Latest</h1>
       <hr />
-      <Container style={pageStyles}>
-        <Row style={pageStyles}>
+      <Container as={StyledContainer}>
+        <Row as={StyledRow}>
           {projectList
             ? filterByType
               ? projectList
                   .filter((f) => f.category === filterByType)
                   .map((project) => (
                     <Col xs={12} md={6} lg={4} key={project.id}>
-                      <Card
-                        style={{ width: "18rem", background: "black" }}
-                        className="m-3 pd-2"
-                      >
+                      <StyledCard className="m-3 pd-2">
                         <Card.Img
                           variant="top"
                           height="150px"
@@ -75,19 +116,14 @@ const dispatch = useDispatch();
                           >
                             Link
                           </a>
-                          <Link
-                            style={{
-                              textDecoration: "none",
-                              marginLeft: "2px",
-                              marginRight: "2px",
-                            }}
+                          <StyledViewButton
+                            to={`/project-detail/${project.id}`}
                             className="m-2 pd-2 btn btn-success"
-                            to={"/project-detail/" + project.id}
                           >
-                            View
-                          </Link>
+                            View <FaInfoCircle />
+                          </StyledViewButton>
                         </Card.Body>
-                      </Card>
+                      </StyledCard>
                     </Col>
                   ))
               : search
@@ -97,7 +133,7 @@ const dispatch = useDispatch();
                   )
                   .map((project) => (
                     <Col xs={12} md={6} lg={4} key={project.id}>
-                      <Card style={{ width: "18rem" }} className="m-3 pd-2">
+                      <Card className="m-3 pd-2">
                         <Card.Img
                           variant="top"
                           height="150px"
@@ -121,17 +157,12 @@ const dispatch = useDispatch();
                           >
                             Link
                           </a>
-                          <Link
-                            style={{
-                              textDecoration: "none",
-                              marginLeft: "2px",
-                              marginRight: "2px",
-                            }}
+                          <StyledViewButton
+                            to={`/project-detail/${project.id}`}
                             className="m-2 pd-2 btn btn-success"
-                            to={"/project-detail/" + project.id}
                           >
-                            View
-                          </Link>
+                            View <FaInfoCircle />
+                          </StyledViewButton>
                         </Card.Body>
                       </Card>
                     </Col>
@@ -144,7 +175,7 @@ const dispatch = useDispatch();
                   .filter((f) => f.category === filterByType)
                   .map((project) => (
                     <Col xs={12} md={6} lg={4} key={project.id}>
-                      <Card style={{ width: "18rem" }} className="m-3 pd-2">
+                      <Card className="m-3 pd-2">
                         <Card.Img
                           variant="top"
                           height="150px"
@@ -171,96 +202,62 @@ const dispatch = useDispatch();
                           >
                             Link
                           </a>
-                          <Link
-                            style={{
-                              textDecoration: "none",
-                              marginLeft: "2px",
-                              marginRight: "2px",
-                            }}
+                          <StyledViewButton
+                            to={`/project-detail/${project.id}`}
                             className="m-2 pd-2 btn btn-success"
-                            to={"/project-detail/" + project.id}
                           >
-                            View
-                          </Link>
+                            View <FaInfoCircle />
+                          </StyledViewButton>
                         </Card.Body>
                       </Card>
                     </Col>
                   ))
               : projectList.map((project) => (
                   <Col xs={12} md={6} lg={4} key={project.id}>
-                    <Card
-                      style={{ width: "18rem", border: "none" }}
-                      className="m-3 pd-2"
-                    >
+                    <StyledCard className="m-3 pd-2">
                       <Card.Img
                         variant="top"
                         height="150px"
                         src={project.image}
                       />
-
-                      <Card.Body style={pageStyles}>
+                      <Card.Body>
                         <Card.Title>{project.title}</Card.Title>
                         <Card.Title>{project.artist}</Card.Title>
                         <Card.Text
                           onClick={() => dispatch(filtered(project.category))}
                         >
-                         <p></p>
+                          <p></p>
                         </Card.Text>
                         <hr />
-                    
-                        <Link
-                          style={{
-                            textDecoration: "none",
-                            marginLeft: "2px",
-                            marginRight: "2px",
-                            pageStyles,
-                            color:"white",
-                            backgroundColor:"black",
-                            borderBlock:"none"
-                          }}
+                        <StyledViewButton
+                          to={`/project-detail/${project.id}`}
                           className="m-2 pd-2 btn btn-success"
-                          to={"/project-detail/" + project.id}
                         >
                           <FaInfoCircle /> View
-                        </Link>
+                        </StyledViewButton>
                       </Card.Body>
-                    </Card>
+                    </StyledCard>
                   </Col>
                 ))
             : "No Data"}
         </Row>
       </Container>
-      <div style={footerStyles}>
-        <p>&copy; 2024 Addis Software(Setting The Standard).</p>
-        <p> All rights reserved.</p>
-        <a
-          href="mailto:info@addissoftware.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={iconStyles}
-        >
-          <i className="fas fa-envelope"></i>
-        </a>
-        <a
-          href="https://github.com/robsen123-fexil"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={iconStyles}
-        >
-          <i className="fab fa-github"></i>
-        </a>
-        <a
-          href="https://et.linkedin.com/company/addis-software"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={iconStyles}
-        >
-          <i className="fab fa-linkedin"></i>
-        </a>
-      </div>
+      <StyledFooter>
+        <StyledFooterContainer>
+          <p>&copy; 2024 Addis Software (Setting The Standard).</p>
+          <p> All rights reserved.</p>
+          <StyledIconLink
+            href="mailto:info@addissoftware.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fas fa-envelope"></i>
+          </StyledIconLink>
+          {/* Other social icons... */}
+        </StyledFooterContainer>
+      </StyledFooter>
     </div>
   );
-}
+};
 
-export default ProjectList
-
+export default ProjectList;
