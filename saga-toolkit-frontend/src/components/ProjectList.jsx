@@ -15,7 +15,19 @@ const pageStyles = {
   color: "white",
   border: "none",
 };
+const CustomLink = styled(Link)`
+  text-decoration: none; /* Remove underline */
+  color: white; /* Set text color to white */
+`;
 
+const StyledCard = styled(Card)`
+  border: 1px solid black; /* Set border to black */
+  border-radius: 5px; /* Optional: Add border-radius for a rounded look */
+  width: 18rem;
+  background: black;
+  color:white;
+
+`;
 const footerStyles = {
   backgroundColor: "darkgray",
   color: "black",
@@ -27,26 +39,6 @@ const iconStyles = {
   marginRight: "10px",
   color: "black",
 };
-
-const StyledCard = styled(Card)`
-  width: 18rem;
-  background: black;
-  color: white;
-`;
-
-const StyledLink = styled(Link)`
-  text-decoration: none;
-  margin-left: 2px;
-  margin-right: 2px;
-  ${pageStyles}
-  color: white;
-  background-color: black;
-  border-block: none;
-`;
-
-const StyledViewButton = styled(StyledLink)`
-  ${borders}
-`;
 
 const StyledContainer = styled(Container)`
   ${pageStyles}
@@ -138,12 +130,18 @@ const ProjectList = () => {
                           />
                         </audio>
                         <Card.Body>
-                          <Card.Title>{project.title}</Card.Title>
+                          <StyledCard>
+                            <CustomLink to={`/project-detail/${project.id}`}>
+                              <Card.Title style={{ color: "white" }}>
+                                {project.title}
+                              </Card.Title>
+                              <Card.Title>{project.artist}</Card.Title>
+                            </CustomLink>
+                          </StyledCard>
+
                           <Card.Text
                             onClick={() => dispatch(filtered(project.category))}
-                          >
-                            <b>({project.category})</b>
-                          </Card.Text>
+                          ></Card.Text>
                           <hr />
                           <a
                             className="btn btn-info m-2 pd-2"
@@ -152,7 +150,6 @@ const ProjectList = () => {
                           >
                             Link
                           </a>
-                          
                         </Card.Body>
                       </StyledCard>
                     </Col>
@@ -181,7 +178,15 @@ const ProjectList = () => {
                           <source src={project.audio} type="audio/mp3" />
                         </audio>
                         <Card.Body>
-                          <Card.Title>{project.title}</Card.Title>
+                          <StyledCard>
+                            <CustomLink to={`/project-detail/${project.id}`}>
+                              <Card.Title style={{ color: "white" }}>
+                                {project.title}
+                              </Card.Title>
+                              <Card.Title>{project.artist}</Card.Title>
+                            </CustomLink>
+                          </StyledCard>
+
                           <Card.Text
                             onClick={() => dispatch(filtered(project.category))}
                           >
@@ -195,7 +200,6 @@ const ProjectList = () => {
                           >
                             Link
                           </a>
-                          
                         </Card.Body>
                       </Card>
                     </Col>
@@ -227,7 +231,14 @@ const ProjectList = () => {
                           <audio controls>
                             <source src={project.audio} type="audio/mp3" />
                           </audio>
-                          <Card.Title>{project.title}</Card.Title>
+                          <StyledCard>
+                            <CustomLink to={`/project-detail/${project.id}`}>
+                              <Card.Title style={{ color: "white" }}>
+                                {project.title}
+                              </Card.Title>
+                              <Card.Title>{project.artist}</Card.Title>
+                            </CustomLink>
+                          </StyledCard>
                           <Card.Text
                             onClick={() => dispatch(filtered(project.category))}
                           >
@@ -241,7 +252,6 @@ const ProjectList = () => {
                           >
                             Link
                           </a>
-                          
                         </Card.Body>
                       </Card>
                     </Col>
@@ -262,15 +272,20 @@ const ProjectList = () => {
                       </Link>
 
                       <Card.Body>
-                        <Card.Title>{project.title}</Card.Title>
-                        <Card.Title>{project.artist}</Card.Title>
+                        <StyledCard>
+                          <CustomLink to={`/project-detail/${project.id}`}>
+                            <Card.Title style={{ color: "white" }}>
+                              {project.title}
+                            </Card.Title>
+                            <Card.Title>{project.artist}</Card.Title>
+                          </CustomLink>
+                        </StyledCard>
                         <Card.Text
                           onClick={() => dispatch(filtered(project.category))}
                         >
                           <p></p>
                         </Card.Text>
                         <hr />
-                        
                       </Card.Body>
                     </StyledCard>
                   </Col>

@@ -9,8 +9,10 @@ import { faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components"; // Import styled-components
-import "../App.css";
+import { Global, css } from "@emotion/react";
 // Define emotion components using styled-components
+
+
 const PageContainer = styled.div`
   background-color: black;
   color: white;
@@ -49,10 +51,18 @@ const LinkContainer = styled(Link)`
   display: inline-block;
   padding: 6px 12px;
 `;
-const NavBarContainer = styled.div`
-  margin: 0;
-  padding: 0;
-`;
+const GlobalStyles = () => (
+  <Global
+    styles={css`
+      body {
+        background-color: black;
+        color: white;
+        margin: 0;
+        padding: 0;
+      }
+    `}
+  />
+);
 const ProjectDetail = () => {
   const navigate = useNavigate();
   const { projectId } = useParams();
@@ -66,6 +76,8 @@ const ProjectDetail = () => {
   };
 
   return (
+  <>
+   <GlobalStyles/>
     <PageContainer >
       <Container >
         <h1 className="text-center mt-3 mb-3 pd-2">Song Description</h1>
@@ -96,7 +108,8 @@ const ProjectDetail = () => {
               "no data"
             )}
           </Col>
-          <Col xs={20} lg={6}>
+          
+          <Col xs={20} lg={5}>
             {singleProject ? (
               <CardContainer>
                 <Card.Body style={{ fontSize: "18px", padding: "20px" }}>
@@ -108,7 +121,8 @@ const ProjectDetail = () => {
                     Category:
                     <b>({singleProject.category})</b>{" "}
                   </Card.Text>
-                  <Card.Text>{singleProject.description}</Card.Text>
+                     <Card.Text><h1>Biography</h1>
+                      {singleProject.description}</Card.Text>
 
                   <a
                     className="btn btn-warning m-2 pd-2"
@@ -170,6 +184,7 @@ const ProjectDetail = () => {
         </IconLink>
       </FooterContainer>
     </PageContainer>
+  </>  
   );
 };
 
