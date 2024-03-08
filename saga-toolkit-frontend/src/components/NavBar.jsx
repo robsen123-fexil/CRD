@@ -58,7 +58,7 @@ const NavBar = () => {
         
 
         <Container size="xl">
-          <StyledBrand href="/">Home</StyledBrand>
+          <StyledBrand href="/">Home one</StyledBrand>
           <StyledToggle aria-controls="basic-navbar-nav" />
           <StyledCollapse id="basic-navbar-nav">
             <StyledNav className="me-auto">
