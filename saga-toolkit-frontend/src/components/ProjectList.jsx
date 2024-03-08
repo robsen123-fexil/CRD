@@ -55,6 +55,14 @@ const StyledContainer = styled(Container)`
 const StyledRow = styled(Row)`
   ${pageStyles}
 `;
+const StyledCardImage = styled(Card.Img)`
+  height: 150px;
+  transition: transform 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.1); /* Increase the scale factor as needed */
+  }
+`;
 
 const StyledFooter = styled.div`
   background-color: darkgray;
@@ -78,7 +86,7 @@ const ProjectList = () => {
 
   return (
     <div style={pageStyles}>
-      <h1>Latest</h1>
+      <h1>Latest Song</h1>
       <hr />
       <Container as={StyledContainer}>
         <Row as={StyledRow}>
@@ -89,11 +97,39 @@ const ProjectList = () => {
                   .map((project) => (
                     <Col xs={12} md={6} lg={4} key={project.id}>
                       <StyledCard className="m-3 pd-2">
-                        <Card.Img
-                          variant="top"
-                          height="150px"
-                          src={project.image}
-                        />
+                        <Link to={`/project-detail/${project.id}`}>
+                          {" "}
+                          <StyledCard>
+                            <StyledCardImage
+                              as="img"
+                              to={`/project-detail/${project.id}`}
+                              variant="top"
+                              src={project.image}
+                            />
+                          </StyledCard>
+                        </Link>
+                        <Link to={`/project-detail/${project.id}`}>
+                          {" "}
+                          <StyledCard>
+                            <StyledCardImage
+                              to={`/project-detail/${project.id}`}
+                              as="img"
+                              variant="top"
+                              src={project.image}
+                            />
+                          </StyledCard>
+                        </Link>
+                        <Link to={`/project-detail/${project.id}`}>
+                          {" "}
+                          <StyledCard>
+                            <StyledCardImage
+                              as="img"
+                              to={`/project-detail/${project.id}`}
+                              variant="top"
+                              src={project.image}
+                            />
+                          </StyledCard>
+                        </Link>
                         <audio controls style={pageStyles}>
                           <source
                             src={project.audio}
@@ -116,12 +152,7 @@ const ProjectList = () => {
                           >
                             Link
                           </a>
-                          <StyledViewButton
-                            to={`/project-detail/${project.id}`}
-                            className="m-2 pd-2 btn btn-success"
-                          >
-                            View <FaInfoCircle />
-                          </StyledViewButton>
+                          
                         </Card.Body>
                       </StyledCard>
                     </Col>
@@ -134,11 +165,18 @@ const ProjectList = () => {
                   .map((project) => (
                     <Col xs={12} md={6} lg={4} key={project.id}>
                       <Card className="m-3 pd-2">
-                        <Card.Img
-                          variant="top"
-                          height="150px"
-                          src={project.image}
-                        />
+                        <Link to={`/project-detail/${project.id}`}>
+                          {" "}
+                          <StyledCard>
+                            <StyledCardImage
+                              as="img"
+                              to={`/project-detail/${project.id}`}
+                              variant="top"
+                              src={project.image}
+                            />
+                          </StyledCard>
+                        </Link>
+
                         <audio controls>
                           <source src={project.audio} type="audio/mp3" />
                         </audio>
@@ -157,12 +195,7 @@ const ProjectList = () => {
                           >
                             Link
                           </a>
-                          <StyledViewButton
-                            to={`/project-detail/${project.id}`}
-                            className="m-2 pd-2 btn btn-success"
-                          >
-                            View <FaInfoCircle />
-                          </StyledViewButton>
+                          
                         </Card.Body>
                       </Card>
                     </Col>
@@ -176,11 +209,17 @@ const ProjectList = () => {
                   .map((project) => (
                     <Col xs={12} md={6} lg={4} key={project.id}>
                       <Card className="m-3 pd-2">
-                        <Card.Img
-                          variant="top"
-                          height="150px"
-                          src={project.image}
-                        />
+                        <Link to={`/project-detail/${project.id}`}>
+                          {" "}
+                          <StyledCard>
+                            <StyledCardImage
+                              to={`/project-detail/${project.id}`}
+                              as="img"
+                              variant="top"
+                              src={project.image}
+                            />
+                          </StyledCard>
+                        </Link>
                         <audio controls>
                           <source src={project.audio} type="audio/mp3" />
                         </audio>
@@ -202,12 +241,7 @@ const ProjectList = () => {
                           >
                             Link
                           </a>
-                          <StyledViewButton
-                            to={`/project-detail/${project.id}`}
-                            className="m-2 pd-2 btn btn-success"
-                          >
-                            View <FaInfoCircle />
-                          </StyledViewButton>
+                          
                         </Card.Body>
                       </Card>
                     </Col>
@@ -215,11 +249,18 @@ const ProjectList = () => {
               : projectList.map((project) => (
                   <Col xs={12} md={6} lg={4} key={project.id}>
                     <StyledCard className="m-3 pd-2">
-                      <Card.Img
-                        variant="top"
-                        height="150px"
-                        src={project.image}
-                      />
+                      <Link to={`/project-detail/${project.id}`}>
+                        {" "}
+                        <StyledCard>
+                          <StyledCardImage
+                            to={`/project-detail/${project.id}`}
+                            as="img"
+                            variant="top"
+                            src={project.image}
+                          />
+                        </StyledCard>
+                      </Link>
+
                       <Card.Body>
                         <Card.Title>{project.title}</Card.Title>
                         <Card.Title>{project.artist}</Card.Title>
@@ -229,12 +270,7 @@ const ProjectList = () => {
                           <p></p>
                         </Card.Text>
                         <hr />
-                        <StyledViewButton
-                          to={`/project-detail/${project.id}`}
-                          className="m-2 pd-2 btn btn-success"
-                        >
-                          <FaInfoCircle /> View
-                        </StyledViewButton>
+                        
                       </Card.Body>
                     </StyledCard>
                   </Col>

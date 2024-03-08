@@ -9,11 +9,15 @@ import { faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components"; // Import styled-components
-
+import "../App.css";
 // Define emotion components using styled-components
 const PageContainer = styled.div`
   background-color: black;
   color: white;
+  size:lg;
+  margin:0;
+  padding:0;
+  
 `;
 const FooterContainer = styled.div`
   background-color:darkgray;
@@ -28,8 +32,9 @@ const IconLink = styled.a`
 `;
 const CardContainer = styled(Card)`
   width: 42rem;
-  background-color: black;
+  background-color: transparent;
   color : white;
+  border:none;
 `;
 
 const ButtonContainer = styled(Button)`
@@ -44,7 +49,10 @@ const LinkContainer = styled(Link)`
   display: inline-block;
   padding: 6px 12px;
 `;
-
+const NavBarContainer = styled.div`
+  margin: 0;
+  padding: 0;
+`;
 const ProjectDetail = () => {
   const navigate = useNavigate();
   const { projectId } = useParams();
@@ -58,8 +66,8 @@ const ProjectDetail = () => {
   };
 
   return (
-    <PageContainer>
-      <Container>
+    <PageContainer >
+      <Container >
         <h1 className="text-center mt-3 mb-3 pd-2">Song Description</h1>
         <Row className="justify-content-center">
           <Col xs={12} lg={6}>

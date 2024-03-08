@@ -4,14 +4,24 @@ import { NavLink } from "react-router-dom";
 import { FaUser } from "react-icons/fa";
 import Searchbox from "./Searchbox";
 import styled from "styled-components";
-
+import { Link } from "react-router-dom";
+import { Col, Card,  Row } from "react-bootstrap";
 const NavBarContainer = styled.div`
   background-color: black;
   color: white;
   border: none;
+  
 `;
+const Stylenavpage = styled(Card.Img)`
+  height: 50px;
+  width:50px;
+  transition: transform 0.3s ease-in-out;
 
-const StyledNavbar = styled(Navbar)`
+  &:hover {
+    transform: scale(1.1); /* Increase the scale factor as needed */
+ `;
+
+ const StyledNavbar = styled(Navbar)`
   background-color: black;
   color: white;
   border: none;
@@ -42,9 +52,12 @@ const StyledFaUser = styled(FaUser)`
 
 const NavBar = () => {
   return (
-    <NavBarContainer>
-      <StyledNavbar expand="lg">
-        <Container>
+    <NavBarContainer size="xl">
+      <StyledNavbar expand="xl">
+        <p> </p>
+        
+
+        <Container size="xl">
           <StyledBrand href="/">Home</StyledBrand>
           <StyledToggle aria-controls="basic-navbar-nav" />
           <StyledCollapse id="basic-navbar-nav">
@@ -52,9 +65,7 @@ const NavBar = () => {
               <StyledBrand href="/add-project">Create</StyledBrand>
             </StyledNav>
             <Searchbox />
-            <StyledBrand href>                                              
-            
-            </StyledBrand>
+            <StyledBrand href></StyledBrand>
           </StyledCollapse>
 
           <NavLink to="/Account">

@@ -1,30 +1,58 @@
-import React from 'react'
-import { useState } from 'react'
-import { Button, Form } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
-import { useAddProjectMutation } from '../rtk-query/features/project/api/apiSlice';
+import React, { useState } from "react";
+import { Button, Form } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
+import { useAddProjectMutation } from "../rtk-query/features/project/api/apiSlice";
+import styled from "@emotion/styled";
+import { Global, css } from "@emotion/react";
+const Container = styled.div`
+  margin: 4rem auto;
+  padding: 3rem;
+  max-width: 600px;
+  border:
+  border-radius: 8px;
+  background-color:white;
+  color:black;
+`;
+;
+
+const GlobalStyles = () => (
+  <Global
+    styles={css`
+      body {
+        background-color: black;
+        color: white;
+        margin: 0;
+        padding: 0;
+      }
+    `}
+  />
+);
 
 
 
+const Heading = styled.h1`
+  text-align: center;
+`;
+
+const StyledForm = styled(Form)`
+  margin-top: 2rem;
+`;
 
 const AddProject = () => {
+  const [image, setImage] = useState(null);
+  const [audio, setAudio] = useState(null);
+  const [title, setTitle] = useState("");
+  const [artist, setArtist] = useState("");
+  const [album, setAlbum] = useState("");
+  const [category, setCategory] = useState("");
+  const [description, setDescription] = useState("");
+  const [demo, setDemo] = useState("");
 
- const [image, setImage] = useState(null);
- const [audio, setAudio]=useState(null);
- const [title, setTitle] = useState('');
- const [artist , setArtist]= useState('');
- const [album , setAlbum]=useState('');
- const [category, setCategory] = useState('');
- const [description, setDescription] = useState('');
- const [demo, setDemo] = useState('');
+  const [addProject] = useAddProjectMutation();
 
- const [addProject] = useAddProjectMutation();
+  const navigate = useNavigate();
 
- const navigate = useNavigate();
- 
-
-// to clear all data
- const clearData = () => {
+  const clearData = () => {
     setImage(null);
     setArtist("");
     setAlbum("");
@@ -33,38 +61,36 @@ const AddProject = () => {
     setCategory("");
     setDescription("");
     setDemo("");
- }
+  };
 
- const projectSubmitHandler = (e) => {
-    
+  const projectSubmitHandler = (e) => {
     e.preventDefault();
-  
+
     let formData = new FormData();
-    formData.append('image', image)
-    formData.append('artist', artist)
-    formData.append('album', album)
-    formData.append('audio', audio)
-    formData.append('title', title)
-    formData.append('category', category)
-    formData.append('description', description)
-    formData.append('demo', demo)
+    formData.append("image", image);
+    formData.append("artist", artist);
+    formData.append("album", album);
+    formData.append("audio", audio);
+    formData.append("title", title);
+    formData.append("category", category);
+    formData.append("description", description);
+    formData.append("demo", demo);
 
     addProject(formData);
 
     clearData();
 
-    navigate('/');
-
- }
-
+    navigate("/");
+  };
 
   return (
-    <div className="container mt-4 mb-4 pd-3">
-      <h1>Add Song</h1>
-      <hr />
-      <div>
-        <Form onSubmit={projectSubmitHandler}>
-          <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+    <>
+      <GlobalStyles />
+       <Container>
+        <Heading>Add Song</Heading>
+        <hr />
+        <StyledForm onSubmit={projectSubmitHandler}>
+          <Form.Group controlId="title">
             <Form.Control
               type="text"
               placeholder="Enter Title"
@@ -74,7 +100,7 @@ const AddProject = () => {
             />
           </Form.Group>
 
-          <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+          <Form.Group controlId="artist">
             <Form.Control
               type="text"
               placeholder="Enter Artist Name"
@@ -84,7 +110,7 @@ const AddProject = () => {
             />
           </Form.Group>
 
-          <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+          <Form.Group controlId="album">
             <Form.Control
               type="text"
               placeholder="Enter Album Title"
@@ -107,10 +133,7 @@ const AddProject = () => {
             <option value="English/Vevo/">English/vevo/</option>
           </Form.Select>
 
-          <Form.Group
-            className="mb-3 mt-3"
-            controlId="exampleForm.ControlTextarea1"
-          >
+          <Form.Group controlId="description">
             <Form.Control
               as="textarea"
               value={description}
@@ -120,7 +143,7 @@ const AddProject = () => {
             />
           </Form.Group>
 
-          <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+          <Form.Group controlId="demo">
             <Form.Control
               type="text"
               value={demo}
@@ -129,7 +152,7 @@ const AddProject = () => {
             />
           </Form.Group>
 
-          <Form.Group controlId="formFile" className="mb-3">
+          <Form.Group controlId="image">
             <Form.Label>Upload Image</Form.Label>
             <Form.Control
               type="file"
@@ -138,7 +161,7 @@ const AddProject = () => {
             />
           </Form.Group>
 
-          <Form.Group controlId="formFile" className="mb-3">
+          <Form.Group controlId="audio">
             <Form.Label>Upload Audio</Form.Label>
             <Form.Control
               type="file"
@@ -150,11 +173,10 @@ const AddProject = () => {
           <Button variant="primary" type="submit">
             Add Song
           </Button>
-        </Form>
-      </div>
-    </div>
+        </StyledForm>
+      </Container>
+    </>
   );
-}
+};
 
-export default AddProject
-   
+export default AddProject;
