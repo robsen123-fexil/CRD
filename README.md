@@ -91,10 +91,10 @@ CRD/
 |   |   |-- sagas/
 |   |   |-- services/
 |   |   |-- App.js
-|   |   |-- index.js
-|-- .env
-|-- .gitignore
-|-- manage.py
-|-- package.json
-|-- README.md
-|-- requirements.txt
+|   |  index.js
+| .env
+ .gitignore
+| manage.py
+package.json
+ README.md
+ requirements.txt
