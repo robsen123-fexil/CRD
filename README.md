@@ -32,26 +32,67 @@ Make sure you have the following installed before setting up the project:
 - `Redux Saga`
 
 ## Installation
-Clone the repository:
-bash
-git clone https://github.com/robsen123-fexil/CRD
-cd saga-toolkit-frontend
-npm install
-npm i redux@redux-saga redux-toolkit
-npm i stylecomponent@emotion
-npm i react-dom
-cd back-end
-pip install django
-pip install django-cors-headers
-pip install djangorestframeworks
-pip install -r requirements.txt
+- Clone the repository:
+
+ - `git clone https://github.com/robsen123-fexil/CRD`
+ - `cd saga-toolkit-frontend`
+ - `npm install`
+ - `npm i redux@redux-saga redux-toolkit`
+ - `npm i stylecomponent@emotion`
+ - `npm i react-dom`
+ - `cd back-end`
+ - `pip install django`
+ - `pip install django-cors-headers`
+ - `pip install djangorestframeworks`
+ - `pip install -r requirements.txt`
 ## Usage
 
 To run the Django development server, open a terminal and execute the following commands:
 
 bash
 cd back-end
-python manage.py makemigrations
-python manage.py migrate
-python manage.py createsuperuser  # I recommend using the username as "admin" and password "123"
-python manage.py runserver 
+ - `python manage.py makemigrations`
+ - `python manage.py migrate`
+ - `python manage.py createsuperuser`   # I recommend using the username as "admin" and password "123"
+ - `python manage.py runserver` 
+to Run the React development server:
+  - `cd saga-toolkit-frontend`
+  - `npm start`
+
+## Folder Structure 
+ CRD/
+`|-- back-end/`
+`|   |-- user_api/`
+`|   |   |-- migrations/`
+`|   |   |-- static/`
+`|   |   |-- templates/`
+`|   |   |-- __init__.py`
+`|   |   |-- admin.py`
+`|   |   |-- apps.py`
+`|   |   |-- models.py`
+`|   |   |-- serialezers.py`
+`|   |   |-- tests.py`
+`|   |   |-- urls.py`
+`|   |   |-- views.py`
+`|   |-- backend/`
+`|   |   |-- __init__.py`
+`|   |   |-- asgi.py`
+`|   |   |-- settings.py`
+`|   |   |-- urls.py`
+`|   |   |-- wsgi.py`
+`|-- saga-toolkit-frontend/`
+`|   |-- public/`
+`|   |-- src/`
+`|   |   |-- actions/`
+`|   |   |-- components/`
+`|   |   |-- reducers/`
+`|   |   |-- sagas/`
+`|   |   |-- services/`
+`|   |   |-- App.js`
+`|   |   |-- index.js`
+`|-- .env`
+`|-- .gitignore`
+`|-- manage.py`
+`|-- package.json`
+`|-- README.md`
+`|-- requirements.txt` 
