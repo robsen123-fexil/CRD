@@ -17,6 +17,9 @@ const UserProfileDropdown = () => {
         <p>Email: robsenteshoma1@gmail.com</p>
       </li>
       <li>
+        <p>Phone: +251940046254</p>
+      </li>
+      <li>
         <hr />
       </li>
     </>
