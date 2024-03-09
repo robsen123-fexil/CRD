@@ -75,7 +75,14 @@ Deployed Link: [https://makemusic-lrduirvdx-robsen123-fexils-projects.vercel.app
 
 ## Detail (edit and delete)
 <img width="550" alt="Screenshot 2024-03-09 203236" src="https://github.com/robsen123-fexil/CRD/assets/111446547/1f97aa46-1442-4388-9395-b5afd47bf10d">
-## Add song 
-<img width="486" alt="Screenshot 2024-03-09 214148" src="https://github.com/robsen123-fexil/CRD/assets/111446547/9a5d7a0c-5f59-4b8b-b9e4-81ccdba30c8f">
-## Update song(edit)
+
+## Add Song(create)
+
+
 <img width="748" alt="Screenshot 2024-03-09 214054" src="https://github.com/robsen123-fexil/CRD/assets/111446547/db3c0907-a733-44d2-a223-8595c3689c43">
+
+## Update Song(edit)
+
+<img width="486" alt="Screenshot 2024-03-09 214148" src="https://github.com/robsen123-fexil/CRD/assets/111446547/9a5d7a0c-5f59-4b8b-b9e4-81ccdba30c8f">
+
+
