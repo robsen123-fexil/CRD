@@ -33,7 +33,7 @@ Make sure you have the following installed before setting up the project:
 
 ## Installation
 Clone the repository:
-```bash
+bash
 git clone https://github.com/robsen123-fexil/CRD
 cd saga-toolkit-frontend
 npm install
@@ -49,11 +49,9 @@ pip install -r requirements.txt
 
 To run the Django development server, open a terminal and execute the following commands:
 
-```bash
+bash
 cd back-end
 python manage.py makemigrations
 python manage.py migrate
 python manage.py createsuperuser  # I recommend using the username as "admin" and password "123"
-python manage.py runserver ```bash
-
-
+python manage.py runserver 
