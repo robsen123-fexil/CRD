@@ -1,5 +1,7 @@
- Title:Make Music/Test Project
-Description
+#Make Music/Test Project
+ 
+#Description
+
 This project is a combination of a Django REST API and a React application using Redux Saga and Toolkit. It aims to provide a seamless integration between the backend and frontend, creating a powerful and efficient web application.
 
 Table of Contents
