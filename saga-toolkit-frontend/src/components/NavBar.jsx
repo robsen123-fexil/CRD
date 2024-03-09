@@ -7,7 +7,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { Col, Card,  Row } from "react-bootstrap";
 const NavBarContainer = styled.div`
-  background-color: black;
+  background-color: black;zz
   color: white;
   border: none;
   
@@ -58,7 +58,7 @@ const NavBar = () => {
         
 
         <Container size="xl">
-          <StyledBrand href="/">Home one</StyledBrand>
+          <StyledBrand href="/">Home</StyledBrand>
           <StyledToggle aria-controls="basic-navbar-nav" />
           <StyledCollapse id="basic-navbar-nav">
             <StyledNav className="me-auto">

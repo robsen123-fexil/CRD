@@ -82,7 +82,7 @@ const ProjectDetail = () => {
       <Container >
         <h1 className="text-center mt-3 mb-3 pd-2">Song Description</h1>
         <Row className="justify-content-center">
-          <Col xs={12} lg={6}>
+          <Col xs={5} lg={6}>
             {singleProject ? (
               <CardContainer>
                 <Card.Img variant="top" src={singleProject.image} />
@@ -109,7 +109,7 @@ const ProjectDetail = () => {
             )}
           </Col>
           
-          <Col xs={20} lg={5}>
+          <Col xs={12} lg={6}>
             {singleProject ? (
               <CardContainer>
                 <Card.Body style={{ fontSize: "18px", padding: "20px" }}>

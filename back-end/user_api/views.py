@@ -9,3 +9,9 @@ from rest_framework import viewsets
 class SongView(viewsets.ModelViewSet):
     queryset = Song.objects.all()
     serializer_class = SongSerializer
+def index(request):
+    context = {
+        'title': 'My Django App',
+        'greeting': 'Welcome to my app!',
+    }
+    return render(request, 'home.html', context)

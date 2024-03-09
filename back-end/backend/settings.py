@@ -35,7 +35,9 @@ INSTALLED_APPS = [
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://127.0.0.1:8000",
-    "https://makemusic-lrduirvdx-robsen123-fexils-projects.vercel.app"
+    "https://makemusic-lrduirvdx-robsen123-fexils-projects.vercel.app",
+    "https://makemusic.vercel.app"
+
 
 ]
 
@@ -58,7 +60,7 @@ ROOT_URLCONF = 'backend.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'myapp/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
