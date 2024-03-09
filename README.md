@@ -62,7 +62,8 @@ to Run the React development server:
 ## Folder Structure 
  CRD/
 CRD/
-|-- back-end/
+CRD/
+-- back-end/
 |   |-- user_api/
 |   |   |-- migrations/
 |   |   |-- static/
