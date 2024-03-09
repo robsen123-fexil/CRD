@@ -55,7 +55,11 @@ const StyledCardImage = styled(Card.Img)`
     transform: scale(1.1); /* Increase the scale factor as needed */
   }
 `;
-
+const IconLink = styled.a`
+  margin-right: 10px;
+  color: black; /* Change this color as needed for the links */
+  text-decoration: none; /* Remove default underline for links */
+`;
 const StyledFooter = styled.div`
   background-color: darkgray;
   color: black;
@@ -297,14 +301,27 @@ const ProjectList = () => {
         <StyledFooterContainer>
           <p>&copy; 2024 Addis Software (Setting The Standard).</p>
           <p> All rights reserved.</p>
-          <StyledIconLink
+          <IconLink
             href="mailto:info@addissoftware.com"
             target="_blank"
             rel="noopener noreferrer"
           >
             <i className="fas fa-envelope"></i>
-          </StyledIconLink>
-          {/* Other social icons... */}
+          </IconLink>
+          <IconLink
+            href="https://github.com/robsen123-fexil"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fab fa-github"></i>
+          </IconLink>
+          <IconLink
+            href="https://et.linkedin.com/company/addis-software"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fab fa-linkedin"></i>
+          </IconLink>
         </StyledFooterContainer>
       </StyledFooter>
     </div>
