@@ -33,54 +33,73 @@ Make sure you have the following installed before setting up the project:
 
 ## Installation
 Clone the repository:
-```bash
-git clone https://github.com/robsen123-fexil/CRD
-cd saga-toolkit-frontend ((for frontend))
-cd back-end ((for backend))
-
-markdown
-Copy code
-# Make Music/Test Project
-
-## Description
-
-This project is a combination of a Django REST API and a React application using Redux Saga and Toolkit. It aims to provide a seamless integration between the backend and frontend, creating a powerful and efficient web application.
-
-## Table of Contents
-- [Features](#features)
-- [Requirements](#requirements)
-- [Installation](#installation)
-- [Configuration](#configuration)
-- [Usage](#usage)
-- [Folder Structure](#folder-structure)
-- [Contributing](#contributing)
-- [License](#license)
-
-## Features
-- Django REST API with CRUD operations.
-- React application with Redux Saga and Toolkit for state management.
-- Seamless integration between the frontend and backend.
-- Easy-to-understand folder structure for scalability.
-
-## Requirements
-Make sure you have the following installed before setting up the project:
-- Python (version x.x.x)
-- Node.js (version x.x.x)
-- npm (version x.x.x)
-- Django (version x.x.x)
-- Django REST Framework (version x.x.x)
-- React (version x.x.x)
-- Redux Toolkit (version x.x.x)
-- Redux Saga (version x.x.x)
-
-## Installation
-Clone the repository:
-```bash
-git clone https://github.com/your-username/your-project.git
-cd your-project
-
-## Install backend dependencies:
-
 bash
+git clone https://github.com/robsen123-fexil/CRD
+cd saga-toolkit-frontend ((for frontend)):
+     npm install
+     npm i redux@redux-saga redux-toolkit
+     npm i stylecomponent@emotion
+     npm i react-dom
+cd back-end ((for backend)):
+     pip install django
+     pip install django-cors-headers
+     pip install djangorestframeworks
+     pip install -r requirements.txt
 
-pip install -r requirements.txt
+##usage
+Run the Django development server:
+   cd back-end
+   python manage.py makemigrations
+   python manage.py migrate
+   python manage.py createsuperuser( i recommend you to use username as "admin" and password  "123"
+   python manage.py runserver
+
+Run the react development server:
+   cd saga-toolkit-frontend
+   npm start
+## Folder Structure   
+  CRD/
+|-- back-end/
+|   |-- user_api/
+|   |   |-- migrations/
+|   |   |-- static/
+|   |   |-- templates/
+|   |   |-- __init__.py
+|   |   |-- admin.py
+|   |   |-- apps.py
+|   |   |-- models.py
+|   |   |-- serialezers.py
+|   |   |-- tests.py
+|   |   |-- urls.py
+|   |   |-- views.py
+|   |-- backend/
+|   |   |-- __init__.py
+|   |   |-- asgi.py
+|   |   |-- settings.py
+|   |   |-- urls.py
+|   |   |-- wsgi.py
+|-- saga-toolkit-frontend/
+|   |-- public/
+|   |-- src/
+|   |   |-- actions/
+|   |   |-- components/
+|   |   |-- reducers/
+|   |   |-- sagas/
+|   |   |-- services/
+|   |   |-- App.js
+|   |   |-- index.js
+|-- .env
+|-- .gitignore
+|-- manage.py
+|-- package.json
+|-- README.md
+|-- requirements.txt
+
+## Contributing
+Contributions are welcome! If you find any issues or have suggestions for improvement, please open an issue or submit a pull request.
+
+## License
+This project is licensed under the MIT License.
+MIT License
+
+Copyright (c) 2024 Robsen Teshome
