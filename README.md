@@ -61,38 +61,39 @@ to Run the React development server:
 
 ## Folder Structure 
  CRD/
-`|-- back-end/`
-`|   |-- user_api/`
-`|   |   |-- migrations/`
-`|   |   |-- static/`
-`|   |   |-- templates/`
-`|   |   |-- __init__.py`
-`|   |   |-- admin.py`
-`|   |   |-- apps.py`
-`|   |   |-- models.py`
-`|   |   |-- serialezers.py`
-`|   |   |-- tests.py`
-`|   |   |-- urls.py`
-`|   |   |-- views.py`
-`|   |-- backend/`
-`|   |   |-- __init__.py`
-`|   |   |-- asgi.py`
-`|   |   |-- settings.py`
-`|   |   |-- urls.py`
-`|   |   |-- wsgi.py`
-`|-- saga-toolkit-frontend/`
-`|   |-- public/`
-`|   |-- src/`
-`|   |   |-- actions/`
-`|   |   |-- components/`
-`|   |   |-- reducers/`
-`|   |   |-- sagas/`
-`|   |   |-- services/`
-`|   |   |-- App.js`
-`|   |   |-- index.js`
-`|-- .env`
-`|-- .gitignore`
-`|-- manage.py`
-`|-- package.json`
-`|-- README.md`
-`|-- requirements.txt` 
+CRD/
+|-- back-end/
+|   |-- user_api/
+|   |   |-- migrations/
+|   |   |-- static/
+|   |   |-- templates/
+|   |   |-- __init__.py
+|   |   |-- admin.py
+|   |   |-- apps.py
+|   |   |-- models.py
+|   |   |-- serialezers.py
+|   |   |-- tests.py
+|   |   |-- urls.py
+|   |   |-- views.py
+|   |-- backend/
+|   |   |-- __init__.py
+|   |   |-- asgi.py
+|   |   |-- settings.py
+|   |   |-- urls.py
+|   |   |-- wsgi.py
+|-- saga-toolkit-frontend/
+|   |-- public/
+|   |-- src/
+|   |   |-- actions/
+|   |   |-- components/
+|   |   |-- reducers/
+|   |   |-- sagas/
+|   |   |-- services/
+|   |   |-- App.js
+|   |   |-- index.js
+|-- .env
+|-- .gitignore
+|-- manage.py
+|-- package.json
+|-- README.md
+|-- requirements.txt
