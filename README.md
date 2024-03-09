@@ -58,3 +58,10 @@ cd back-end
 to Run the React development server:
   - `cd saga-toolkit-frontend`
   - `npm start`
+# License
+
+This project is licensed under the MIT License.
+
+## MIT License
+
+Copyright (c) 2024 Robsen Teshome
