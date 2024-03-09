@@ -10,8 +10,6 @@ This project is a combination of a Django REST API and a React application using
 - [Installation](#installation)
 - [Configuration](#configuration)
 - [Usage](#usage)
-- [Folder Structure](#folder-structure)
-- [Contributing](#contributing)
 - [License](#license)
 
 ## Features
@@ -65,3 +63,6 @@ This project is licensed under the MIT License.
 ## MIT License
 
 Copyright (c) 2024 Robsen Teshome
+
+# Deployed Link
+Deployed Link: [https://makemusic-lrduirvdx-robsen123-fexils-projects.vercel.app/](https://makemusic-lrduirvdx-robsen123-fexils-projects.vercel.app/)
