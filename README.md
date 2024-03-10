@@ -1,3 +1,4 @@
+
 # Make Music/Test Project
 
 ## Description
@@ -10,8 +11,6 @@ This project is a combination of a Django REST API and a React application using
 - [Installation](#installation)
 - [Configuration](#configuration)
 - [Usage](#usage)
-- [Folder Structure](#folder-structure)
-- [Contributing](#contributing)
 - [License](#license)
 
 ## Features
@@ -65,3 +64,25 @@ This project is licensed under the MIT License.
 ## MIT License
 
 Copyright (c) 2024 Robsen Teshome
+
+# Deployed Link
+Deployed Link: [https://makemusic-lrduirvdx-robsen123-fexils-projects.vercel.app/](https://makemusic-lrduirvdx-robsen123-fexils-projects.vercel.app/)
+# OverView Browser
+
+## landing Page
+
+<img width="897" alt="Screenshot 2024-03-09 203300" src="https://github.com/robsen123-fexil/CRD/assets/111446547/669823ca-9b7c-4c71-9f99-03665bbd9f28">
+
+## Detail (edit and delete)
+<img width="550" alt="Screenshot 2024-03-09 203236" src="https://github.com/robsen123-fexil/CRD/assets/111446547/1f97aa46-1442-4388-9395-b5afd47bf10d">
+
+## Add Song(create)
+
+
+<img width="748" alt="Screenshot 2024-03-09 214054" src="https://github.com/robsen123-fexil/CRD/assets/111446547/db3c0907-a733-44d2-a223-8595c3689c43">
+
+## Update Song(edit)
+
+<img width="486" alt="Screenshot 2024-03-09 214148" src="https://github.com/robsen123-fexil/CRD/assets/111446547/9a5d7a0c-5f59-4b8b-b9e4-81ccdba30c8f">
+
+
