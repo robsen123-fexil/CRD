@@ -25,6 +25,7 @@ const Stylenavpage = styled(Card.Img)`
   background-color: black;
   color: white;
   border: none;
+ 
 `;
 
 const StyledBrand = styled(Navbar.Brand)`
